@@ -8,4 +8,4 @@ api-version: '26.2'
 load: POSTWORLD
 
 authors: [ abradee ]
-website: example.com
+website: https://github.com/Abradee/QuasarSmpPlugin
