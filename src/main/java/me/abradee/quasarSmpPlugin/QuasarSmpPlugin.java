@@ -10,11 +10,13 @@ import java.io.File;
 import java.nio.file.Files;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
+import me.abradee.quasarSmpPlugin.Managers.DatabaseManager;
 
 public class QuasarSmpPlugin extends JavaPlugin {
 
     private Javalin app;
     private Context context;
+    private DatabaseManager databaseManager;
 
     @Override
     public void onEnable() {
@@ -39,6 +41,7 @@ public class QuasarSmpPlugin extends JavaPlugin {
 
             context.getBindings("js").putMember("Bukkit", Bukkit.getServer());
             context.getBindings("js").putMember("Bridge", new PaperScriptBridge());
+            context.getBindings("js").putMember("Database", databaseManager);
 
             String jsCode = Files.readString(jsFile.toPath());
             context.eval("js", jsCode);
