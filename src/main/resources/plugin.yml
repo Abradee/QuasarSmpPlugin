@@ -1,0 +1,11 @@
+name: QuasarSmpPlugin
+description: $description
+prefix: QuasarCodeReferral
+version: '${version}'
+
+main: me.abradee.quasarSmpPlugin.QuasarSmpPlugin
+api-version: '26.2'
+load: POSTWORLD
+
+authors: [ abradee ]
+website: example.com
