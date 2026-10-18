@@ -44,7 +44,7 @@ public class DatabaseManager {
         }
     }
 
-    public Map<String, Integer> loadPlayerQuests(UUID uuid) {
+    public Map<String, Integer> loadPlayerCodes(UUID uuid) {
         Map<String, Integer> progressMap = new HashMap<>();
         String sql = "SELECT code, uses FROM player_media_codes WHERE uuid = ?";
 
@@ -61,7 +61,7 @@ public class DatabaseManager {
         return progressMap;
     }
 
-    public void saveQuestProgress(UUID uuid, String code, int uses) {
+    public void saveCodeProgress(UUID uuid, String code, int uses) {
         String sql = "INSERT OR REPLACE INTO player_media_codes (uuid, code, uses) VALUES (?, ?, ?)";
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
